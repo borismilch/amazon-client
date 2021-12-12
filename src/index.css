@@ -1,0 +1,22 @@
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
+
+@layer components {
+  body {
+    @apply bg-gray-100
+  }
+  .link {
+    @apply  cursor-pointer hover:underline
+  }
+  .cart_indicator {
+    @apply absolute -top-2 -right-1 flex items-center justify-center font-bold w-5 h-5   text-white bg-yellow-400
+  }
+  .button {
+    @apply p-2 text-xs md:text-sm bg-gradient-to-b from-yellow-200 to-yellow-400 border 
+    border-yellow-300 rounded-sm focus:outline-none  active:from-yellow-500 cursor-pointer
+  }
+
+}
