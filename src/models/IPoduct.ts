@@ -6,7 +6,7 @@ export interface IRaiting {
 }
 
 export interface IProduct {
-  
+  _id: string
   title: String
   id: String
   price: Number
@@ -15,4 +15,21 @@ export interface IProduct {
   image: String
 
   raiting: IRaiting
+}
+
+export interface ICart {
+  [key: string] : ICartItem
+}
+
+export interface ICartItem extends IProduct {
+  count: number
+}
+
+export interface IOrder {
+  owner: string,
+  _id: string,
+  currency: string,
+  date: number,
+  total: number,
+  items: ICartItem[]
 }

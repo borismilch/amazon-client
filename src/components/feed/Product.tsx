@@ -3,12 +3,20 @@ import { IProduct } from '../../models/IPoduct'
 import { StarIcon } from '@heroicons/react/solid'
 import NumberFormat from 'react-number-format';
 
+import { observer } from 'mobx-react-lite';
+import { Context, IStore } from '../../App'
+import { useContext } from 'react'
+
 const Product:React.FC<{product: IProduct}> = ({product}) => {
   const raiting = Math.floor(+4)
 
-  const [hasPrime] = useState(Math.random() > 0.5)
+  const { cart } = useContext<IStore>(Context)
 
-  console.log(product)
+  const pushToCart = () => {
+    cart.addCartItem(product)
+  }
+
+  const [hasPrime] = useState(Math.random() > 0)
 
   return (
     <div className='relative flex flex-col m-5 bg-white z-30 p-10'>
@@ -19,7 +27,7 @@ const Product:React.FC<{product: IProduct}> = ({product}) => {
       </div>
      
 
-      <h4 className='my-3'>{product.title}</h4>
+      <h4 className='my-3 '>{product.title}</h4>
 
       
       <div className='flex gap-1'>
@@ -45,9 +53,9 @@ const Product:React.FC<{product: IProduct}> = ({product}) => {
         </div>
       ) }
 
-      <button className='mt-auto button'>Add to Basket</button>
+      <button onClick={pushToCart} className='mt-auto button'>Add to Basket</button>
     </div>
   )
 }
 
-export default Product
+export default observer(Product)

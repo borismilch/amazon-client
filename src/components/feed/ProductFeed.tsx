@@ -24,8 +24,8 @@ const ProductFeed: React.FC<{products: IProduct[]}> = ({products}) => {
 
       {products.slice(5).map((p: IProduct) => (
 
-      <div className=''>
-        <Product product={p} key={p.id + ''} />
+      <div>
+        <Product product={p} key={p._id + ''} />
       </div>
 
       ))}

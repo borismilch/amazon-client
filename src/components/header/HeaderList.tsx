@@ -2,25 +2,39 @@ import React from 'react'
 
 import { ShoppingCartIcon } from '@heroicons/react/outline'
 
-const HeaderList = () => {
+import { useHistory } from 'react-router-dom'
+import { observer } from 'mobx-react-lite'
+import { useContext } from 'react'
+import { Context } from '../../App';
+
+const HeaderList:React.FC = () => {
+
+  const { auth, cart } = useContext(Context)
+
+  const history = useHistory()
+
+  const pushHistory = () => { history.push('/cart') }
+
   return (
    <div className='text-white text-xs flex gap-6 px-4 items-center'>
 
-    <div className='link'>
-     <p> Hello, Sign in</p>
+    <div className='link popupParent'>
+     <p> Hello, {auth.user.email} </p>
      <p  className='font-extrabold md:text-sm' >Account List</p>
+
+    
     </div>
 
-    <div className='link'>
+    <div className='link' onClick={() => { history.push('/orders') }}>
      <p> Returns</p>
      <p className='font-extrabold md:text-sm'>& Orders</p>
     </div>
 
-    <div className='link relative flex items-center'>
+    <div className='link relative flex items-center '>
 
-      <div className='relative'>
+      <div className='relative' onClick={pushHistory}>
         
-      <span className='cart_indicator' style={{borderRadius: '50%'}}>0</span>
+      <span className='cart_indicator' style={{borderRadius: '50%'}}>{cart.quantityCount}</span>
         <ShoppingCartIcon className='w-8 h-8' />
       </div>
 
@@ -31,4 +45,4 @@ const HeaderList = () => {
   )
 }
 
-export default HeaderList
+export default observer(HeaderList)

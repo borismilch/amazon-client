@@ -1,0 +1,2 @@
+export const STRIPE_PUBLIC_KEY: string = 'pk_test_51JufUOInFtjHZp0OZN4hIB0C4ahWT6kbo4uqHitHgQBxCTSTamXqXB0tQCa6jDBXrdjBTzhYGwIA7fZbM53LlwKC00lr8S6M1J'
+export const STRIPE_SECRET: string = 'sk_test_51JufUOInFtjHZp0OLuAROAkSIx9YCqogdu4LAx8mOiKHJC5aJN3R2PytFOfkzQ5aDLKdLRhwiM81wgelysEYys9v00gtQsCSwV'

@@ -4,6 +4,7 @@ import { MenuIcon, ShoppingCartIcon, SearchIcon } from '@heroicons/react/outline
 import HeaderList from './header/HeaderList';
 import DownHeader from './header/DownHeader';
 
+
 const Header: React.FC = () => {
 
   const history = useHistory()
@@ -34,12 +35,12 @@ const Header: React.FC = () => {
         <div className='hidden relative bg-yellow-400 overflow-hidden md:flex cursor-pointer hover:bg-yellow-500 rounded-md flex-grow'>
 
           <input
-            className='p-2 w-6 flex-grow focus:outline-none'
+            className='p-1 w-6 flex-grow focus:outline-none'
 
            type="text" 
             
           />
-          <SearchIcon className='h-12 p-4' />
+          <SearchIcon  className='h-10  p-3' />
 
         </div>
 

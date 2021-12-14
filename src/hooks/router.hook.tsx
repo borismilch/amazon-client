@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 
 import { Switch, Route, Redirect } from 'react-router-dom'
-import { Home, Login, Register } from '../views'
+import { Home, Login, Register, Orders, Cart, Success } from '../views'
 import { observer } from 'mobx-react-lite'
 
 import { Context, IStore } from '../App'
 
 import Header from '../components/Header'
+
 
 const Routes:React.FC = () => {
 
@@ -25,8 +26,19 @@ const Routes:React.FC = () => {
         <Route exact path="/">
           <Home />
         </Route>
+
+        <Route exact path="/cart">
+          <Cart />
+        </Route>
+
+        <Route exact path='/success'>
+          <Success  />
+        </Route>
+
+        <Route exact path='/orders'>
+          <Orders  />
+        </Route>
         
-       
         <Route>
           <Redirect to='/' />
         </Route>
@@ -42,6 +54,11 @@ const Routes:React.FC = () => {
 
         <Route exact path="/register">
           <Register />
+        </Route>
+
+        
+        <Route exact path='/success'>
+          <Success  />
         </Route>
        
         <Route>

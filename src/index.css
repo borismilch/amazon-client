@@ -8,8 +8,11 @@
   body {
     @apply bg-gray-100
   }
+  img {
+    @apply m-0
+  }
   .link {
-    @apply  cursor-pointer hover:underline
+    @apply  cursor-pointer p-1 border border-transparent hover:border-gray-100 rounded-sm transition-all duration-100
   }
   .cart_indicator {
     @apply absolute -top-2 -right-1 flex items-center justify-center font-bold w-5 h-5   text-white bg-yellow-400
